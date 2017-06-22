@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/Wel', function(req, res, next) {
     //res.send('what is the problem');
-    docs.update({"name":"Amit"},{$set:{"class":"M.tech"}},function( err, docs) {
+    docs.insert({"name":"Amit","class":"M.tech"},function( err, docs) {
         if(err) console.log(err)
         else{
             res.json(docs);
