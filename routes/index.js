@@ -24,7 +24,7 @@ router.get('/Wel', function(req, res, next) {
     docs.insert({"name":"Amit","class":"M.tech"},function( err, docs) {
         if(err) console.log(err)
         else{
-            res.json(docs);
+            res.send("successfulll!!");
         }
 
     })
