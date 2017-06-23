@@ -29,5 +29,13 @@ router.get('/Wel', function(req, res, next) {
 
     })
 });
+router.get('/come', function(req, res, next) {
+    docs.update({"id":"78uyui","name":"anil"},{$push:{"group":{"name":"user3"}}},function(err,docs) {
+        if (err) console.log(err)
+        else {
+            res.send("successfull!");
+        }
+    })
+});
 
 module.exports = router;
