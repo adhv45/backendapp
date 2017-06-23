@@ -37,5 +37,13 @@ router.get('/come', function(req, res, next) {
         }
     })
 });
+router.get('/wec',function(req,res,next){
+    docs.find({"name":"anil"},function(err,docs) {
+        if (err) console.log(err)
+        else {
+            res.json(docs);
+        }
+    })
+});
 
 module.exports = router;
