@@ -19,9 +19,12 @@ router.get('/', function(req, res, next) {
     })
 });
 
-router.get('/Wel', function(req, res, next) {
+router.post('/Wel', function(req, res, next) {
     //res.send('what is the problem');
-    docs.insert({"name":"Amit","class":"M.tech"},function( err, docs) {
+    var username_back=req.body.name;
+    var password_back=req.body.password;
+
+    docs.insert({"name":"username","password":"password"},function( err, docs) {
         if(err) console.log(err);
         else{
             res.send("successfulll!!");
@@ -30,6 +33,7 @@ router.get('/Wel', function(req, res, next) {
     })
 });
 router.get('/come', function(req, res, next) {
+
     docs.update({"id":"78uyui","name":"anil"},{$push:{"group":{"name":"user3"}}},function(err,docs) {
         if (err) console.log(err);
         else {
