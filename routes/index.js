@@ -19,12 +19,12 @@ router.get('/', function(req, res, next) {
     })
 });
 
-router.post('/Wel', function(req, res, next) {
+router.post('/insert', function(req, res, next) {
     //res.send('what is the problem');
-    var username_back=req.body.name;
-    var password_back=req.body.password;
+    var username=req.body.name;
+    var pass=req.body.password;
 
-    docs.insert({"name":"username","password":"password"},function( err, docs) {
+    docs.insert({"name":username,"password":pass},function( err, docs) {
         if(err) console.log(err);
         else{
             res.send("successfulll!!");
