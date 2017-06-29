@@ -50,4 +50,18 @@ router.get('/wec',function(req,res,next){
     })
 });
 
+router.get('/location', function(req, res, next) {
+    //res.send('what is the problem');
+    var lat=req.body.latitude;
+    var long=req.body.longitude;
+
+    docs.insert({"latitude":lat,"longitude":long},function( err, docs) {
+        if(err) console.log(err);
+        else{
+            res.send("located successfully!!");
+        }
+
+    })
+});
+
 module.exports = router;
